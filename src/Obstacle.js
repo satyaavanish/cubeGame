@@ -1,11 +1,23 @@
+<<<<<<< HEAD
 import * as THREE from 'https://unpkg.com/three@0.158.0/build/three.module.js';
 
 
 const obstacleGeometry = new THREE.BoxGeometry(1, 1, 1);
 const obstacleMaterial = new THREE.MeshStandardMaterial({ color: 'red' });
+=======
+let THREE;
+let obstacleGeometry;
+let obstacleMaterial;
+>>>>>>> 47a63e0 (Fix module paths for GitHub Pages)
 const obstacles = [];
 
-export function createObstacle(x, z) {
+export function createObstacle(x, z, _THREE) {
+  if (!THREE) {
+    THREE = _THREE;
+    obstacleGeometry = new THREE.BoxGeometry(1, 1, 1);
+    obstacleMaterial = new THREE.MeshStandardMaterial({ color: 'red' });
+  }
+
   const mesh = new THREE.Mesh(obstacleGeometry, obstacleMaterial);
   mesh.position.set(x, 0.5, z);
   obstacles.push(mesh);
