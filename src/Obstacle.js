@@ -1,4 +1,5 @@
-import * as THREE from 'three';
+import * as THREE from 'https://unpkg.com/three@0.158.0/build/three.module.js';
+
 
 const obstacleGeometry = new THREE.BoxGeometry(1, 1, 1);
 const obstacleMaterial = new THREE.MeshStandardMaterial({ color: 'red' });
